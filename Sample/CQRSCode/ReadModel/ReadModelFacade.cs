@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using CQRSCode.ReadModel.Dtos;
+﻿using CQRSCode.ReadModel.Dtos;
 using CQRSCode.ReadModel.Infrastructure;
+using System;
+using System.Collections.Generic;
 
 namespace CQRSCode.ReadModel
 {

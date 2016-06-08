@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CQRSCode.ReadModel.Dtos;
+using System;
 using System.Collections.Generic;
-using CQRSCode.ReadModel.Dtos;
 
 namespace CQRSCode.ReadModel
 {

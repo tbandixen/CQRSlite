@@ -1,16 +1,16 @@
-﻿using System;
-using CQRSCode.ReadModel.Dtos;
+﻿using CQRSCode.ReadModel.Dtos;
 using CQRSCode.ReadModel.Events;
 using CQRSCode.ReadModel.Infrastructure;
 using CQRSlite.Events;
+using System;
 
 namespace CQRSCode.ReadModel.Handlers
 {
     public class InventoryItemDetailView : IEventHandler<InventoryItemCreated>,
-											IEventHandler<InventoryItemDeactivated>,
-											IEventHandler<InventoryItemRenamed>,
-											IEventHandler<ItemsRemovedFromInventory>,
-											IEventHandler<ItemsCheckedInToInventory>
+                                            IEventHandler<InventoryItemDeactivated>,
+                                            IEventHandler<InventoryItemRenamed>,
+                                            IEventHandler<ItemsRemovedFromInventory>,
+                                            IEventHandler<ItemsCheckedInToInventory>
     {
         public void Handle(InventoryItemCreated message)
         {
@@ -27,7 +27,7 @@ namespace CQRSCode.ReadModel.Handlers
         private InventoryItemDetailsDto GetDetailsItem(Guid id)
         {
             InventoryItemDetailsDto dto;
-            if(!InMemoryDatabase.Details.TryGetValue(id, out dto))
+            if (!InMemoryDatabase.Details.TryGetValue(id, out dto))
             {
                 throw new InvalidOperationException("did not find the original inventory this shouldnt happen");
             }

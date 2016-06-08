@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReadModel\Events\BaseEvent.cs" />
     <Compile Include="WriteModel\Handlers\InventoryCommandHandlers.cs" />
     <Compile Include="WriteModel\Commands\CheckInItemsToInventory.cs" />
     <Compile Include="WriteModel\Commands\CreateInventoryItem.cs" />

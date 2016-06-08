@@ -1,14 +1,14 @@
-﻿using System;
-using CQRSlite.Commands;
+﻿using CQRSlite.Commands;
+using System;
 
 namespace CQRSCode.WriteModel.Commands
 {
-    public class CheckInItemsToInventory : ICommand 
-	{
+    public class CheckInItemsToInventory : ICommand
+    {
         public readonly int Count;
 
-        public CheckInItemsToInventory(Guid id, int count, int originalVersion) 
-		{
+        public CheckInItemsToInventory(Guid id, int count, int originalVersion)
+        {
             Id = id;
             Count = count;
             ExpectedVersion = originalVersion;
@@ -16,5 +16,5 @@ namespace CQRSCode.WriteModel.Commands
 
         public Guid Id { get; set; }
         public int ExpectedVersion { get; set; }
-	}
+    }
 }

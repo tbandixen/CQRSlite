@@ -1,6 +1,6 @@
-﻿using System;
-using CQRSCode.ReadModel.Events;
+﻿using CQRSCode.ReadModel.Events;
 using CQRSlite.Domain;
+using System;
 
 namespace CQRSCode.WriteModel.Domain
 {
@@ -20,7 +20,10 @@ namespace CQRSCode.WriteModel.Domain
 
         public void ChangeName(string newName)
         {
-            if (string.IsNullOrEmpty(newName)) throw new ArgumentException("newName");
+            if (string.IsNullOrEmpty(newName))
+            {
+                throw new ArgumentException("newName");
+            }
             ApplyChange(new InventoryItemRenamed(Id, newName));
         }
 
@@ -33,17 +36,17 @@ namespace CQRSCode.WriteModel.Domain
 
         public void CheckIn(int count)
         {
-            if(count <= 0) throw new InvalidOperationException("must have a count greater than 0 to add to inventory");
+            if (count <= 0) throw new InvalidOperationException("must have a count greater than 0 to add to inventory");
             ApplyChange(new ItemsCheckedInToInventory(Id, count));
         }
 
         public void Deactivate()
         {
-            if(!_activated) throw new InvalidOperationException("already deactivated");
+            if (!_activated) throw new InvalidOperationException("already deactivated");
             ApplyChange(new InventoryItemDeactivated(Id));
         }
 
-        private InventoryItem(){}
+        private InventoryItem() { }
         public InventoryItem(Guid id, string name)
         {
             Id = id;

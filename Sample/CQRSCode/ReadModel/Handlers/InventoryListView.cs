@@ -5,9 +5,9 @@ using CQRSlite.Events;
 
 namespace CQRSCode.ReadModel.Handlers
 {
-	public class InventoryListView : IEventHandler<InventoryItemCreated>,
-										IEventHandler<InventoryItemRenamed>,
-										IEventHandler<InventoryItemDeactivated>
+    public class InventoryListView : IEventHandler<InventoryItemCreated>,
+                                        IEventHandler<InventoryItemRenamed>,
+                                        IEventHandler<InventoryItemDeactivated>
     {
         public void Handle(InventoryItemCreated message)
         {
